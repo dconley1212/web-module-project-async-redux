@@ -1,10 +1,15 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Dogs from "./components/Dogs";
 
 function App() {
   return (
     <div className="App">
-      Async Redux Project
+      <h1>Dogs:</h1>
+      <h2>The most loyal and needy friend you'll ever have.</h2>
+      <div>
+        <Dogs />
+      </div>
     </div>
   );
 }
