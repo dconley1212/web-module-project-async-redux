@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { fetchStart, fetchSuccess, fetchFail } from "../actions";
+import { fetchStart, fetchSuccess, fetchFail, getDogImage } from "../actions";
 
 const Dogs = (props) => {
   const { image, isFetching, error, dispatch } = props;
@@ -19,13 +19,12 @@ const Dogs = (props) => {
   }, []);
 
   const handleButtonClick = () => {
-    dispatch(fetchStart);
+    dispatch(getDogImage());
   };
 
   return (
     <div>
-      <button onClick={handleButtonClick}>Click find breeds!</button>
-      <p>{isFetching}</p>
+      <button onClick={handleButtonClick}>Click to find breeds!</button>
       <img src={image} />
     </div>
   );

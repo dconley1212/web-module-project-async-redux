@@ -11,7 +11,7 @@ const reducer = (state = initialState, action) => {
     case FETCH_START:
       return {
         ...state,
-        image: "Loading",
+        image: "",
         isFetching: true,
         error: "",
       };

@@ -4,14 +4,19 @@ export const FETCH_START = "FETCH_START";
 export const FETCH_SUCCESS = "FETCH_SUCCESS";
 export const FETCH_FAIL = "FETCH_FAIL";
 
-// export const getPointerImage = () => {
-//   return (dispatch) => {
-//     dispatch({ type: FETCH_START });
-//     axios
-//       .get("https://dog.ceo/api/breed/GERMANPOINTER/images/random")
-//       .then((resp) => console.log(resp));
-//   };
-// };
+export const getDogImage = () => {
+  return (dispatch) => {
+    dispatch({ type: FETCH_START });
+    axios
+      .get("https://dog.ceo/api/breeds/image/random")
+      .then((resp) => {
+        dispatch({ type: FETCH_SUCCESS, payload: resp.data.message });
+      })
+      .catch((err) => {
+        dispatch({ type: FETCH_FAIL, payload: err });
+      });
+  };
+};
 
 export const fetchStart = () => {
   return {
