@@ -3,7 +3,7 @@ import { FETCH_FAIL, FETCH_START, FETCH_SUCCESS } from "../actions";
 const initialState = {
   image: "",
   isFetching: false,
-  error: "Error",
+  error: "",
 };
 
 const reducer = (state = initialState, action) => {
@@ -27,7 +27,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         image: "",
         isFetching: false,
-        error: "Error, can retrieve any images of German Short-hair Pointers",
+        error: "Sorry an error occured and we couldn't find any doggos for you",
       };
     default:
       return state;

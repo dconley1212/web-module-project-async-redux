@@ -18,13 +18,22 @@ const Dogs = (props) => {
       });
   }, []);
 
+  if (error) {
+    return <h3>{error}</h3>;
+  }
+
+  if (isFetching) {
+    return <h3>Fetching a dog for you!</h3>;
+  }
+
   const handleButtonClick = () => {
     dispatch(getDogImage());
   };
 
   return (
     <div>
-      <button onClick={handleButtonClick}>Click to find breeds!</button>
+      <h3>What do you think of this guy?</h3>
+      <button onClick={handleButtonClick}>Click to see more pals!</button>
       <img src={image} />
     </div>
   );
